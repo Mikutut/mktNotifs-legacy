@@ -12,5 +12,3 @@
 ### Dependencies
 
 As of today (12.11.2020) this resource does not require any additional dependencies.
-
-### &copy; Mikut 2020
