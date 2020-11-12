@@ -1,24 +1,16 @@
 # mkt-notifs
 
-## Project setup
-```
-npm install
-```
+## Mikut's notifications system
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Installation
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. Download latest release from `"Releases"` tab
+2. Unpack it anywhere in `/resources` folder
+3. Add `ensure mkt-notifs` in your `server.cfg` file.
+4. Enjoy!
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Dependencies
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+As of today (12.11.2020) this resource does not require any additional dependencies.
+
+### &copy; Mikut 2020
