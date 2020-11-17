@@ -1,3 +1,4 @@
+.gitignore
 /git-commit-scheme.txt
 /git-release-scheme.txt
 /src/dist/*
