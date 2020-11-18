@@ -21,7 +21,7 @@ export default {
       notificationIndex.value++;
       notification.count = notificationIndex.value;
       activeNotifications.value.push(notification);
-      await Wait(10000);
+      await Wait(notification.duration !== undefined ? notification.duration * 1000 : 10000);
       activeNotifications.value.shift();
       if(activeNotifications.value.length === 0) {
         notificationIndex.value = 0;

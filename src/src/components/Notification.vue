@@ -8,12 +8,12 @@
             {{ notificationContent }}
         </div>
         <hr class="mkt-notif-divider" style="margin-bottom: 0px; background: transparent;"/>
-        <div class="mkt-notif-cooldown-bar"></div>
+        <div class="mkt-notif-cooldown-bar" :style="{'animation-duration': notificationDuration + 's', '-webkit-animation-duration': notificationDuration + 's'}"></div>
     </div>
 </template>
 
 <script>
-import {ref} from "vue";
+import {ref, onBeforeMount} from "vue";
 export default {
     name: "Notification",
     components: {},
@@ -22,10 +22,22 @@ export default {
         let notificationType = ref(props.data.type);
         let notificationTitle = ref(props.data.title);
         let notificationContent = ref(props.data.content);
+        let notificationDuration = ref(10);
+
+        onBeforeMount(() => {
+            if(props.data.duration !== undefined && props.data.duration !== null) {
+                notificationDuration.value = props.data.duration;
+            }
+            else {
+                notificationDuration.value = 10;
+            }
+        })
+
         return { 
             notificationType,
             notificationTitle,
-            notificationContent
+            notificationContent,
+            notificationDuration
         };
     }
 }
@@ -46,6 +58,7 @@ export default {
     flex-flow: column nowrap;
     margin: 0.25rem 0;
     border-radius: 5px;
+    white-space: pre-wrap;
     &.error {
         background: red;
     }
@@ -97,6 +110,6 @@ export default {
     height: 12px;
     background: black;
     transform: scaleX(1);
-    animation: cooldownBarAnim 10s linear forwards;
+    animation: cooldownBarAnim linear forwards;
 }
 </style>
