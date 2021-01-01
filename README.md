@@ -40,4 +40,4 @@ As of today (17.11.2020) this resource does not require any additional dependenc
 
 ---
 
-### Mikut 2020-2020
+### Mikut 2020-2021
