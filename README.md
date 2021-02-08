@@ -36,7 +36,7 @@ As of today (17.11.2020) this resource does not require any additional dependenc
     1st argument - Notification title,  
     2nd argument - Notification content,  
     3rd argument - Notification type (currently there are `"success"`, `"warn"`, `"error"` and `"info"` types),  
-    4th argument - ServerId of player notification should be shown to (`-1` can be used to make notification visible to all players currently connected)
+    4th argument - ServerId of player notification should be shown to (`-1` can be used to make notification visible to all players currently connected)  
     5th argument - Notification duration (defaults to `10000` if not provided)
 
 ---
