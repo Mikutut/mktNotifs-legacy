@@ -1,5 +1,5 @@
 <template>
-  <div id="mkt-notifs-container">
+  <div id="mktnotifs-container">
     <transition-group
       name="popup-slide"
     >
