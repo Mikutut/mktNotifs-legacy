@@ -27,24 +27,36 @@
         {{ description }}
       </p>
     </section>
+    <span
+      class="popup-countdown"
+    >
+      To okienko zniknie za {{ countdown }} sekund(y)...
+    </span>
   </main>
 </template>
 
 <script lang="ts">
 /* eslint-disable vue/no-dupe-keys */
-import { defineComponent } from "vue";
+import { defineComponent, Ref, ref, onMounted } from "vue";
 
 export default defineComponent({
   name: 'mktNotifsPopUp',
-  props: ["title", "description", "type", "showIcon"],
+  props: ["title", "description", "type", "duration", "showIcon"],
   setup(props) {
 
+    const countdown: Ref<number> = ref(Math.round(props.duration / 1000));
+
+    setInterval(() => {
+      countdown.value--;
+    }, 1000);
+
     return {
-      showIcon: props.showIcon,
-      type: props.type,
       title: props.title,
       description: props.description,
-    }
+      type: props.type,
+      countdown,
+      showIcon: props.showIcon
+    };
   }
 })
 </script>
@@ -72,6 +84,7 @@ $colors: (
   width: 80vw;
   display: grid;
   grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
   border-radius: 8px;
   margin: 10px 0 20px;
   padding: 10px;
@@ -92,10 +105,12 @@ $colors: (
   & > i {
     grid-column-start: 1;
     grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: flex;
     width: 100%;
     height: 100%;
-    font-size: 40px;
+    font-size: 50px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -106,6 +121,8 @@ $colors: (
 .popup-data {
   grid-column-start: 2;
   grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
   width: 100%;
   height: 100%;
   display: flex;
@@ -132,5 +149,18 @@ $colors: (
     text-align: center;
     overflow: hidden;
   }
+}
+.popup-countdown {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  margin-top: 10px;
+  color: white;
+  text-align: center;
 }
 </style>

@@ -8,8 +8,9 @@
         v-bind:key="popUp.id"
         v-bind:title="popUp.title"
         v-bind:description="popUp.description"
-        v-bind:showIcon="popUp.showIcon"
         v-bind:type="popUp.type"
+        v-bind:duration="popUp.duration"
+        v-bind:showIcon="popUp.showIcon"
       />  
     </transition-group>  
   </div>
