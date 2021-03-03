@@ -26,11 +26,11 @@ const addPopUp = (popUpData: PopUpData) => {
     showIcon
   });
   const tempId = id;
-  id++;
   setTimeout(() => { 
     popUps.value.splice(popUps.value.indexOf(popUps.value.find((v: PopUpData) => v.id === tempId) as PopUpData), 1);
     if(popUps.value.length === 0) id = 0;
   }, 5000);
+  id++;
 };
 
 export {
