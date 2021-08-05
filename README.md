@@ -4,6 +4,10 @@
 
 ---
 
+# THIS ARCHIVE IS READ-ONLY AND WORK ON THIS PROJECT HAS BEEN ABANDONED.
+
+---
+
 ## Installation
 
 ### When using with FiveM
